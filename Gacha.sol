@@ -1,15 +1,46 @@
-# Gacha Game dAPP
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.9;
 
-This is a decentralized application that mimics a Gacha game. The core mechanic of these games is that you can get a random character in exchange for some in-game currency. This is my submission for the ETH + AVAX Proof: Intermediate EVM Course Module 2 Project.
+contract Gacha {
+    address payable public owner;
+    uint256 public balance;
+    mapping(uint => uint256) public characters;
 
-## Description
+    // events
+    event Roll(uint256 charValue);
+    event GetFreeRoll();
+    event BurnCharacters();
 
-It is a smart contract written in Solidity, and the front-end is developed using React. The smart contract has three (3) main functions.
+    constructor(uint initBalance) payable {
+        owner = payable(msg.sender);
+        balance = initBalance;
+    }
 
-### Program Functions
+    function getBalance() public view returns(uint256) {
+        return balance;
+    }
 
-```javascript
-	function roll(uint charValue) public payable {
+    function getTwoStarCopies() public view returns(uint256) {
+        return characters[2];
+    }
+    function getThreeStarCopies() public view returns(uint256) {
+        return characters[3];
+    }
+    function getFourStarCopies() public view returns(uint256) {
+        return characters[4];
+    }
+    function getFiveStarCopies() public view returns(uint256) {
+        return characters[5];
+    }
+    function getSixStarCopies() public view returns(uint256) {
+        return characters[6];
+    }
+
+    // custom errors
+    error InsufficientBalance(uint256 balance);
+    error InsufficientCharacters(uint256 totalCopies);
+
+    function roll(uint charValue) public payable {
         require(msg.sender == owner, "You are not the owner of this account");
         uint _previousBalance = balance;
         uint _previousCharacterValue = characters[charValue];
@@ -77,15 +108,4 @@ It is a smart contract written in Solidity, and the front-end is developed using
 
         emit BurnCharacters();
     }
-```
-
-The roll() function takes in a character value, which represents their star rate. It then subtracts from balance and also adds a copy to that character star rate.
-
-The getFreeRoll() function gives 1 free roll, which is the balance of this dAPP. You can exchange 1 roll for a random character.
-
-Finally, the burnCharacters() function burns all copies of all characters in exchange for some balance. Every 2 copies regardless of star rate, gives exactly 1 roll.
-
-## Authors
-
-Andre A. Aquino 
-
+}
