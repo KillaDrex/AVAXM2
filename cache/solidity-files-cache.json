@@ -1,0 +1,75 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/workspace/SCM-Starter/contracts/Assessment.sol": {
+      "lastModificationDate": 1719629101401,
+      "contentHash": "aee22468aba2c144918db11e4b5ba3d2",
+      "sourceName": "contracts/Assessment.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "Assessment"
+      ]
+    },
+    "/workspace/SCM-Starter/contracts/Gacha.sol": {
+      "lastModificationDate": 1719632246278,
+      "contentHash": "174c8f1bd06c5f6991c4a7e58fc13e12",
+      "sourceName": "contracts/Gacha.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "Gacha"
+      ]
+    }
+  }
+}
